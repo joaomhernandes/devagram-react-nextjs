@@ -1,0 +1,36 @@
+@mixin buttonPrimario {
+  background-color: $corPrimaria2;
+  color: $branco;
+}
+@mixin buttonOutline {
+  background-color: $branco;
+  color: $corPrimaria2;
+  border: 1px solid $corPrimaria2;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &.primaria {
+    @include buttonPrimario;
+
+    &:hover {
+      @include buttonOutline;
+    }
+  }
+
+  &.outline {
+    @include buttonOutline;
+
+    &:hover {
+      @include buttonPrimario;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
